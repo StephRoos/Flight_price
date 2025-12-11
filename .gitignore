@@ -9,5 +9,5 @@ wheels/
 # Virtual environments
 .venv
 test-FP.ipynb
-flight-price.ipynb
+
 Clean_Dataset.csv

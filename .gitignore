@@ -11,3 +11,5 @@ wheels/
 test-FP.ipynb
 
 Clean_Dataset.csv
+
+artifacts/

@@ -10,7 +10,6 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---------- Styles (un peu de CSS pour un look "search") ----------
 st.markdown(
     """
     <style>
@@ -62,7 +61,7 @@ def load_model():
 
 model = load_model()
 
-# ---------- Valeurs par défaut / listes (tu peux les caler sur ton dataset si tu veux) ----------
+# ---------- Valeurs par défaut / listes ----------
 AIRLINES = ["IndiGo", "Air India", "Vistara", "SpiceJet", "GO FIRST", "AirAsia"]
 CITIES = ["Delhi", "Mumbai", "Bangalore", "Kolkata", "Hyderabad", "Chennai"]
 TIME_BANDS = ["Early_Morning", "Morning", "Afternoon", "Evening", "Night", "Late_Night"]
@@ -86,7 +85,7 @@ def make_row(
     }])
 
 def format_inr(x):
-    # affichage simple (sans dépendance)
+    # affichage simple
     x = float(x)
     return f"₹ {x:,.0f}".replace(",", " ")
 

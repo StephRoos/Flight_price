@@ -17,12 +17,6 @@ st.markdown(
       .hero {text-align:center; padding: 2.2rem 0 1rem 0;}
       .hero h1 {font-size: 2.2rem; margin-bottom: .2rem;}
       .hero p {opacity:.75; margin-top: 0;}
-      .card {
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 16px;
-        padding: 18px;
-        background: rgba(255,255,255,0.04);
-      }
       .pill {
         display:inline-block;
         padding: 6px 10px;
@@ -110,7 +104,6 @@ st.markdown(
 # ---------- Bloc central (barre de recherche / formulaire) ----------
 st.markdown('<div class="searchwrap">', unsafe_allow_html=True)
 with st.container():
-    # st.markdown('<div class="card">', unsafe_allow_html=True)
 
     c1, c2, c3 = st.columns([1.1, 1.1, 1], vertical_alignment="bottom")
     with c1:
@@ -139,7 +132,6 @@ with st.container():
     st.markdown("<div style='height: 10px'></div>", unsafe_allow_html=True)
     run = st.button("🔎 Rechercher le meilleur prix", width='stretch')
 
-    # st.markdown("</div>", unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)
 
 # ---------- Résultats ----------
@@ -166,7 +158,6 @@ if run:
 
         left, right = st.columns([1.2, 0.8])
         with left:
-            # st.markdown('<div class="card">', unsafe_allow_html=True)
             st.markdown("### Estimation du prix")
             st.markdown(f'<div class="bigprice">{format_inr(pred)}</div>', unsafe_allow_html=True)
             st.markdown('<div class="subtle">Prix estimé par le modèle (Roupies indiennes).</div>', unsafe_allow_html=True)
@@ -185,15 +176,7 @@ if run:
             ]
             st.markdown("".join([f'<span class="pill">{p}</span>' for p in pills]), unsafe_allow_html=True)
 
-            # st.markdown("</div>", unsafe_allow_html=True)
-
         with right:
-            # st.markdown('<div class="card">', unsafe_allow_html=True)
             st.markdown("### Détails envoyés au modèle")
             st.dataframe(X_input, width='stretch', hide_index=True)
             st.caption("Ton modèle inclut le preprocessing (OneHot + scaler + imputers) dans la Pipeline.")
-            # st.markdown("</div>", unsafe_allow_html=True)
-
-# ---------- Footer ----------
-st.markdown("<div style='height: 24px'></div>", unsafe_allow_html=True)
-st.caption("Astuce : si tu veux des listes (compagnies / villes / créneaux) exactement comme dans le dataset, charge le CSV dans l’app et fais `sorted(df['airline'].unique())`, etc.")
